@@ -55,6 +55,18 @@ int main()
 	// Block waiting here.
 	int keyhit = 0;
 	std::cout << "\nPlaying ... press <esc> to quit.\n";
+	std::cout << "[s] -4 semitone" << std::endl;
+	std::cout << "[d] -3 semitone" << std::endl;
+	std::cout << "[f] -2 semitone" << std::endl;
+	std::cout << "[g] -1 semitone" << std::endl;
+	std::cout << "[h] +1 semitone" << std::endl;
+	std::cout << "[j] +2 semitone" << std::endl;
+	std::cout << "[k] +3 semitone" << std::endl;
+	std::cout << "[l] +4 semitone" << std::endl;
+	std::cout << std::endl;
+	std::cout << "[a] reset to 220 Hz" << std::endl;
+	std::cout << std::endl;
+	std::cout << "[other keys] display current frequency" << std::endl;
 	while (keyhit != 32 && keyhit != 27)
 	{
 		keyhit = _getch();
