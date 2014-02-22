@@ -223,3 +223,10 @@ x64/
 *.vspscc
 .builds
 *.dotCover
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
