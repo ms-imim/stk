@@ -1,6 +1,5 @@
 // crtsine.cpp STK tutorial program
 #include <conio.h>
-#include "SingWave.h"
 #include "SineWave.h"
 #include "RtAudio.h"
 using namespace stk;
@@ -25,7 +24,7 @@ int main()
   // Set the global sample rate before creating class instances.
   Stk::setSampleRate( 44100.0 );
 
-  SingWave sine("../../rawwaves/ahh.raw");
+  SineWave sine;
   RtAudio dac;
 
   // Figure out how many bytes in an StkFloat and setup the RtAudio stream.
