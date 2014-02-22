@@ -1,5 +1,6 @@
 // crtsine.cpp STK tutorial program
-
+#include <conio.h>
+#include "SingWave.h"
 #include "SineWave.h"
 #include "RtAudio.h"
 using namespace stk;
@@ -24,7 +25,7 @@ int main()
   // Set the global sample rate before creating class instances.
   Stk::setSampleRate( 44100.0 );
 
-  SineWave sine;
+  SingWave sine("../../rawwaves/ahh.raw");
   RtAudio dac;
 
   // Figure out how many bytes in an StkFloat and setup the RtAudio stream.
@@ -40,9 +41,10 @@ int main()
     error.printMessage();
     goto cleanup;
   }
+  double f = 440.0;
+  double twelveRoot2 = 1.0594630943592952645618252949463;
 
-  sine.setFrequency(440.0);
-
+  sine.setFrequency(f);
   try {
     dac.startStream();
   }
@@ -52,9 +54,67 @@ int main()
   }
 
   // Block waiting here.
-  char keyhit;
-  std::cout << "\nPlaying ... press <enter> to quit.\n";
-  std::cin.get( keyhit );
+  int keyhit = 0;
+  std::cout << "\nPlaying ... press <esc> to quit.\n";
+  while (keyhit != 32 && keyhit != 27)
+  {
+	  keyhit = _getch();
+	  if (tolower(keyhit) == 'a')
+	  {
+		  f = 220.0;
+		  sine.setFrequency(f);
+	  }
+	  else if (tolower(keyhit) == 'g')
+	  {
+		  f /= twelveRoot2;
+		  sine.setFrequency(f);
+	  }
+	  else if (tolower(keyhit) == 'h')
+	  {
+		  f *= twelveRoot2;
+		  sine.setFrequency(f);
+	  }
+	  else if (tolower(keyhit) == 'f')
+	  {
+		  for (int i = 0; i < 2; ++i)
+			f /= twelveRoot2;
+		  sine.setFrequency(f);
+	  }
+	  else if (tolower(keyhit) == 'j')
+	  {
+		  for (int i = 0; i < 2; ++i)
+			  f *= twelveRoot2;
+		  sine.setFrequency(f);
+	  }
+	  else if (tolower(keyhit) == 'd')
+	  {
+		  for (int i = 0; i < 3; ++i)
+			  f /= twelveRoot2;
+		  sine.setFrequency(f);
+	  }
+	  else if (tolower(keyhit) == 'k')
+	  {
+		  for (int i = 0; i < 3; ++i)
+			  f *= twelveRoot2;
+		  sine.setFrequency(f);
+	  }
+	  else if (tolower(keyhit) == 's')
+	  {
+		  for (int i = 0; i < 4; ++i)
+			  f /= twelveRoot2;
+		  sine.setFrequency(f);
+	  }
+	  else if (tolower(keyhit) == 'l')
+	  {
+		  for (int i = 0; i < 4; ++i)
+			  f *= twelveRoot2;
+		  sine.setFrequency(f);
+	  }
+	  else
+	  {
+		  std::cout << "Freq: " << f << std::endl;
+	  }
+  }
 
   // Shut down the output stream.
   try {

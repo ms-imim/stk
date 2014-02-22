@@ -24,7 +24,10 @@ int main()
     exit( 1 );
   }
 
-  sine.setFrequency( 441.0 );
+  double fStart = 441.0;
+  double fStop = 882.0;
+  double fStep = (fStop - fStart) / nFrames;
+  sine.setFrequency( fStart );
 
   // Option 1: Use StkFrames
   /*
@@ -40,7 +43,9 @@ int main()
   // Option 2: Single-sample computations
   for ( int i=0; i<nFrames; i++ ) {
     try {
-      dac->tick( sine.tick() );
+		fStart += fStep;
+		sine.setFrequency(fStart);
+		dac->tick( sine.tick() );
      }
     catch ( StkError & ) {
       goto cleanup;
