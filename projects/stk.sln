@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stkTest", "stkTest\stkTest.vcxproj", "{222D638E-00EF-4800-A335-9D8C2E5DAE70}"
+	ProjectSection(ProjectDependencies) = postProject
+		{956F0B8A-EE1A-4D89-A4A8-7833AD1638FA} = {956F0B8A-EE1A-4D89-A4A8-7833AD1638FA}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stk", "stk\stk.vcxproj", "{956F0B8A-EE1A-4D89-A4A8-7833AD1638FA}"
 EndProject
