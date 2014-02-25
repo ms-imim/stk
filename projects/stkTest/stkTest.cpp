@@ -23,7 +23,6 @@ int main()
 {
 	// Set the global sample rate before creating class instances.
 	Stk::setSampleRate(44100.0);
-
 	SineWave sine;
 	RtAudio dac;
 
