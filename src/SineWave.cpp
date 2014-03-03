@@ -18,7 +18,7 @@
 
 namespace stk {
 
-StkFrames SineWave :: table_;
+//StkFrames SineWave :: table_;
 
 SineWave :: SineWave( void )
   : time_(0.0), rate_(1.0), phaseOffset_(0.0)

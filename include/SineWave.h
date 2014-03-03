@@ -87,7 +87,7 @@ protected:
 
   void sampleRateChanged( StkFloat newRate, StkFloat oldRate );
 
-  static StkFrames table_;
+  StkFrames table_;
   StkFloat time_;
   StkFloat rate_;
   StkFloat phaseOffset_;
