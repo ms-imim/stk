@@ -11,6 +11,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stk", "stk\stk.vcxproj", "{956F0B8A-EE1A-4D89-A4A8-7833AD1638FA}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stkDemo", "stkDemo\stkDemo.vcxproj", "{5EE4FB7B-5D7B-4567-BCA9-FCEED5E401DB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{956F0B8A-EE1A-4D89-A4A8-7833AD1638FA} = {956F0B8A-EE1A-4D89-A4A8-7833AD1638FA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
